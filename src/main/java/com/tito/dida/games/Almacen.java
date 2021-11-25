@@ -15,7 +15,7 @@ public class Almacen extends Application{
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent contenedor = new FXMLLoader().load(getClass().getResource("JuegosAlmacen.fxml"));
+        Parent contenedor = new FXMLLoader().load(getClass().getResource("JuegosAlmacen_1.fxml"));
         Scene escena = new Scene (contenedor,790,700);
        
         primaryStage.setScene(escena);

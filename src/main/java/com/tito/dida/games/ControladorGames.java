@@ -108,7 +108,7 @@ public class ControladorGames implements Initializable {
      }
 
     private void configurarComboBox() {
-        plataforma.getItems().addAll("PS4", "Pc", "Switch", "Xbox");
+        plataforma.getItems().addAll("PlayStation", "Pc", "Nintendo", "Microsoft");
         pegi.getItems().addAll("+3","+7","+12","+16","+18");
     }
     
