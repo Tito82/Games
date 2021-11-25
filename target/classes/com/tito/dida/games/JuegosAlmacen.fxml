@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox spacing="20" style="-fx-background-color: #d4e6f1;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tito.dida.games.ControladorGames">
+    <padding>
+        <Insets bottom="10" left="10" right="10" top="10" />
+    </padding>  
+    
+ <ToolBar prefHeight="41.0" prefWidth="581.0" style="-fx-background-color: transparent;" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
+    <Button onAction="#guardar">
+     <graphic>
+         <ImageView>
+             <Image url="@../../../../iconos/crear.png">
+             </Image>
+         </ImageView>
+     </graphic>
+    </Button> 
+    <Button onAction="#editar">
+     <graphic>
+         <ImageView>
+             <Image url="@../../../../iconos/editar.png">
+             </Image>
+         </ImageView>
+     </graphic>
+    </Button> 
+    <Button contentDisplay="RIGHT" onAction="#eliminar">
+     <graphic>
+         <ImageView>
+             <Image url="@../../../../iconos/eliminar.png">
+             </Image>
+         </ImageView>
+     </graphic>
+    </Button> 
+</ToolBar>
+
+<GridPane hgap="10" prefHeight="391.0" prefWidth="580.0" vgap="10">
+    <padding>
+        <Insets bottom="10" left="10" right="10" top="10" />
+    </padding>
+    
+    <Text fontSmoothingType="LCD" smooth="false" style="-fx-font-weight:bold;" text=" Almacen de Juegos " textAlignment="CENTER" wrappingWidth="452.4384765625" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="LEFT">
+        <font>
+            <Font name="Futura Md BT Bold" size="18.0" />
+        </font>
+    </Text>
+    
+    <Label contentDisplay="CENTER" text="Nombre" GridPane.rowIndex="1">
+         <font>
+            <Font name="Futura Md BT Bold" size="12.0" />
+         </font>
+    </Label>
+    <TextField fx:id="nombre" prefHeight="27.0" prefWidth="638.0" style="-fx-border-color: #5dade2;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+    
+    <Label prefHeight="15.0" prefWidth="108.0" text="Desarrollador" GridPane.rowIndex="2">
+         <font>
+            <Font name="Futura Md BT Bold" size="12.0" />
+         </font></Label>
+    <TextArea fx:id="desarrollador" prefHeight="42.0" prefWidth="478.0" style="-fx-border-color: #5dade2;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+    
+    <Label text="Descripcion" GridPane.rowIndex="3">
+         <font>
+            <Font name="Futura Md BT Bold" size="12.0" />
+         </font></Label>
+    <TextArea fx:id="descripcion" style="-fx-border-color: #5dade2;" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <effect>
+            <Reflection />
+         </effect></TextArea>
+    
+    <Label text="Valoracion" GridPane.rowIndex="4">
+         <font>
+            <Font name="Futura Md BT Bold" size="12.0" />
+         </font>
+    </Label>
+    <TextArea fx:id="valoracion" prefHeight="55.0" prefWidth="478.0" style="-fx-border-color: #5dade2;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+    <Label text="Pegi" GridPane.rowIndex="6">
+         <font>
+            <Font name="Futura Md BT Bold" size="12.0" />
+         </font>
+    </Label>
+    <ComboBox fx:id="plataforma" prefHeight="27.0" prefWidth="173.0" style="-fx-border-color: #5dade2;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+    <Label text="Plataforma" GridPane.rowIndex="5">
+         <font>
+            <Font name="Futura Md BT Bold" size="12.0" />
+         </font>
+    </Label>
+    <ComboBox fx:id="pegi" prefHeight="27.0" prefWidth="172.0" style="-fx-border-color: #5dade2;" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+        
+       <columnConstraints>
+         <ColumnConstraints />
+         <ColumnConstraints />
+         <ColumnConstraints />
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+      </rowConstraints>
+  
+   
+</GridPane>
+
+    <StackPane HBox.hgrow="ALWAYS">
+     <TableView fx:id="tablaJuegos" style="-fx-background-color: #d6eaf8;">
+         <columns>
+              <TableColumn text="Id">
+                    <cellValueFactory>
+                       <PropertyValueFactory property="id" />
+                   </cellValueFactory>
+              </TableColumn>
+             <TableColumn prefWidth="118.0" text="Nombre">
+                 <cellValueFactory>
+                        <PropertyValueFactory property="Nombre" />
+                  </cellValueFactory>
+              </TableColumn>
+              <TableColumn prefWidth="128.0" text="Desarrollador">
+                 <cellValueFactory>
+                        <PropertyValueFactory property="desarrollador" />
+                  </cellValueFactory>
+              </TableColumn>
+              <TableColumn prefWidth="161.0" text="Descripcion">
+                   <cellValueFactory>
+                      <PropertyValueFactory property="descripcion" />
+                  </cellValueFactory>
+              </TableColumn>
+              <TableColumn minWidth="0.0" prefWidth="92.0" text="Valoracion">
+                   <cellValueFactory>
+                      <PropertyValueFactory property="valoracion" />
+                  </cellValueFactory>
+              </TableColumn>    
+              <TableColumn minWidth="0.0" prefWidth="134.0" text="Plataforma">
+                   <cellValueFactory>
+                      <PropertyValueFactory property="plataforma" />
+                  </cellValueFactory>
+              </TableColumn>
+              <TableColumn text="Pegi">
+                 <cellValueFactory>
+                        <PropertyValueFactory property="pegi" />
+                  </cellValueFactory>
+              </TableColumn>
+         </columns>
+        </TableView>
+    </StackPane>  
+</VBox>
