@@ -37,8 +37,7 @@ public class GamesDAO {
     } 
     
     public void guardarOActualizar(Game game){
-        System.out.println("ID ================================>" + game.getId());
-        if(game.getId()==0){
+               if(game.getId()==0){
             guardar(game);
         }else{
             editar(game);
